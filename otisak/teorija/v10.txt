@@ -1,0 +1,9 @@
+U C++ postoji mehanizam pomoću kojeg možemo napisati šablon (eng. template) kojim opisujemo opšti slučaj (bez upotrebe konkretnih tipova)
+Klasa koja je napisana pomoću šablona naziva se generička klasa
+Kada se u šablonu navedu konkretni tipovi dobijamo konkretne klase
+
+// primer
+generička klasa Niz<class T, int D> – niz koji ima elemente tipa T i dimenzije je D
+jedna konkretizacija tog opšteg niza Niz<int, 100> - niz od 100 int elemenata
+
+(str 83) -> ono za ispis preko slobodne funkcije read()

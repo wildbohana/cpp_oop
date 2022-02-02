@@ -1,0 +1,50 @@
+Osnovni elementi u objektnom programiranju su entiteti
+Terminom entitet se označava da nešto postoji, a to nešto ima neka svojstva i stoji u odnosu sa nekim drugim entitetima
+Klasa entiteta je kolekcija entiteta, koji su prema nekom kriterijumu, međusobno slični
+
+Model entiteta u okviru datog domena problema gradi se na osnovu skupa odabranih relevantnih osobina entiteta
+Entitet poseduje sve osobine, a njegov model samo odabrane
+Jedan isti entitet može imati različite relevantne osobine u različitim domenima problema
+Objekat predstavlja model entiteta, a klasa objekata predstavlja model klase entiteta
+
+Vrlo bitna je i realizacija klase u nekom objektno orijentisanom programskom jeziku
+Određena klasa entiteta se može modelovati na više različitih načina, kao što se određeni model klase entiteta može realizovati na više različitih načina
+
+Opšti oblik definicije klase u C++ izgleda ovako:
+class Klasa {
+	// <podaci-članovi>
+	// <objekti-članovi>
+	// <funkcije-članice ili metode>
+};
+
+Ime klase je identifikator
+Po konvenciji, ime klase kao i svaka reč koja predstavlja posebnu celiku u okviru imena počinje velikim početnim slovom, dok su ostala slova mala (JedanDvaTriNaPrimer)
+
+Podaci članovi mogu biti bilo kog standardnog ili programerski definisanog tipa
+	int a; Ttip t;
+Objekti članovi se deklarišu navođenjem naziva njihove klase i nazivom imena objekta-člana
+	MyClass m;
+U okviru definicije klase može da se nađe cela definicija metode ili samo njen prototip
+	void setX(double xx) {x=xx;}
+[više na strani 24, zadatak 3.1]
+
+Prava pristupa mogu biti private ili public
+Članu klase koji je u private-segmentu može se pristupati samo iz unutrašnjosti klase (iz metoda)
+Članu klase koji je u public-segmentu može se pristupati kako iz unutrašnjosti, tako i iz spoljašnjosti klase (iz metoda, iz programa koji koriste tu klasu itd.)
+Preporučuje se da podaci-članovi i objekti-članovi budu private, a da metode budu public
+Ukoliko se izmena vrednosti podataka-članova vrši preko metoda onda se te izmene mogu kontrolisati ranim mehanizmima, na primer odgovarajućim if-blokom naredbi
+U suprotnom se entitet (objekat) može naći u nedozvoljenom stanju
+
+Konstruktor je metoda koja kreira objekat
+Osobine konstruktora:
+	- ima isto ime kao i klasa
+	- može i ne mora da ima argumente
+	- nikad ne vraća vrednost (nema tip i na kraju tela nema naredbu return)
+
+Set-metoda služi da postavi novu vrednost podatka-člana i ima argument tipa koji odgovara tipu podatka-člana kojeg menja, obično je tipa void i nema oznaku const jer menja stanje objekta
+Get-metode služe da očitaju vrednost nekog podatka-člana i uvek su tipa koji odgovara tipu tog podatka-člana, obično nemaju argumente i imaju oznaku const jer ne menjaju stanje objekta
+
+DEFINICIJA KLASE SE ZAVRŠAVA SA ; !!!
+
+Prijateljska funkcija je slobodna funkcija (nije metoda!) koja je unutar klase proglašena za prijatelja date klase i time ona ima privilegiju da unutar nje može pristupati svim članovima te klase (čak i onim koji se nalaze u private segmentu)
+Neka slobodna funkcija se proglašava prijateljem klase tako što se u klasi navede njen prototip i ispred prototipa navede reč friend

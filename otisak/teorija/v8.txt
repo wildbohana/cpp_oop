@@ -1,0 +1,14 @@
+Ekspicitnom promenom tipa originala u neku drugu klasu koristi se samo roditeljski deo originala (u suštini samo izolujemo nadklasni deo potklase)
+/*
+	original - Kocka
+	promena u klasu - Kvadar
+	naredba - (Kvadar)k
+*/
+
+Izvedena klasa (potklasa) nasleđuje sve sadržaje od osnovne klase (natklase)
+
+Redosled destruktora je obrnut od redosleda konstruktora
+Prvo se pozivaju konstruktori natklasa pa tek onda potklasa (Person -> Student -> PHD)
+
+Da bi se pozvala baš roditeljska metoda predstaviSe(), tj. od klase Person, u klasi Student potrebno je napisati:
+	Person::predstaviSe();

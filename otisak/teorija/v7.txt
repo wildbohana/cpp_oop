@@ -1,0 +1,17 @@
+Natklasa - ona koju napraviš prvu (ona najmanja)
+Potklasa - ona koju napraviš drugu (ona proširena)
+
+Nasleđivanje je veza između klasa koja podrazumeva preuzimanje sadržaja nekih klasa, odnosno klasa-predaka i na taj način, uz mogućnost modifikacije preuzetog sadržaja i dodavanje novog, dobija se klasa-potomak
+
+Klasa od koje se preuzima sadržaj se naziva klasa-predak, osnovna klasa, klasa davalac, natklasa
+Klasa koja prima sadržaj se naziva klasa-potomak, izvedena klasa, klasa-primalac, potklasa
+
+Objekti potklase poseduju sve sadržaje, sa ili bez modifikacija, koje poseduju i objekti njihove natklase, a pored toga poseduju i sadržaj koji je karakterističan samo za njih
+Na osnovu toga, u svakom objektu potklase može se razlikovati roditeljski deo i deo koji je specifičan za samog potomka
+
+Ponašanje članova natklase zavisi od načina izvođenja (koje može biti private, public i protected)
+Članu klase koji je private može se direktno pristupati samo iz metoda te klase i njenih prijateljskih funkcija
+Članu klase koji je protected može se direktno pristupati iz metoda te klase, njenih prijateljskih funkcija i metoda njenih potklasa
+
+NE NASLEĐUJU se konstruktori, destruktori i prijateljstvo sa funkcijama
+Nasleđuju se metode (geteri, seteri, funkcije...), polja klase ? šta još lol

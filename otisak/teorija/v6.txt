@@ -1,0 +1,25 @@
+Objekat klase DinString sadrži:
+- podatak-član text koji je pokazivač na tip char (koji na kraju ima karakter NULL tj '\n')
+- podatak-član dužina tipa int
+- podatak-član this koji pokazuje na sam objekat kom pripada
+
+Operator new se koristi za dinamičko zauzimanje memorije i vraća adresu od dobijenog memorijskog segmenta
+Operator delete služi za oslobađanje dinamički alociranog memorijskog segmenta
+
+Destruktor je metoda koja uništava objekat i ima sledeće karakteristike:
+	- ima isto ime kao i klasa i ispred imena obavezan znak ~
+	- nema parametre
+	- ne poziva se direktno, već se poziva automatski u trenutku kada je potrebno uništiti objekat (npr na kraju funkcije je potrebno uništiti sve lokalne objekte)
+
+U svakoj klasi postoji ugrađeni kostruktor i ugrađeni destruktor
+Za klasu DinString je obavezno da se napiše destruktor da bi se sprečilo "curenje memorije"
+	~DinString() {delete[] text;}
+(u ovom slučaju je operator [] preklopljen 2 puta - i čitanje i pisanje sa i-te pozicije)
+Ugrađeni destruktor samo uništava objekat, ali ne oslobađa dinamički alociranu memoriju
+Zbog toga, ukoliko u klasi postoji dinamička alokacija memorije, tada je obavezno da se napiše destruktor koji bi oslobodio zauzetu memoriju
+
+Kod praklapanja operatora dodele =, važno je proveriti da li važi this!=&ds
+Preklapa se i operator za spajanje (konkatenaciju) stringova +=, za proveru jednakosti stringova ==, za ispis na ekranu << (koji se može pisati i kao  out<<s.text;)
+
+
+// pogledaj malo DinString.hpp

@@ -1,0 +1,20 @@
+Podaci mogu biti promenljive i konstante
+Deklaracijom se zauzima prostor u memoriji za datu promeljivu
+Definicijom = deklaracija + postavljanje inicijalne vrednosti
+Tip promenljive - određuje koliko će memorije biti zauzeto
+Ime promenljive - simbolički predstavljena adresa na kojoj se nalazi memorija koja je zauzeta za datu promenljivu
+
+Pokazivač je promenljiva koja sadrži neku adresu
+Deklaracija pokazivača: int *iPok;
+Svi pokazivači su istog formata, bez obzira na koji tip pokazuju (veličina memorija svih pokazivača je ista)
+Unarni operator & vraća memorijsku adresu nekog podatka
+Primenom unarnog operatora * može se posredno pristupiti nekom podatku pomoću memorijske adrese
+
+Ime niza je pokazivač koji sadrži adresu prvog elementa niza
+Memorija za elemente niza može biti zauzeta statički i dinamički, pa razlikujemo statičke i dinamičke nizove
+Statički niz: int a[5];
+Dinamički niz: int *a; a = (int*)malloc(5*sizeof(int));
+
+Potprogrami predstavljaju mehanizam pomoću kojeg se složeni problemi razbijaju na jednostavnije potprobleme
+Programski jezik C formalno poznaje samo jednu vrstu potprograma, a to su funkcije
+Funkcije su potprogrami koji na osnovu argumenata daju jedan rezultat koji se naziva vrednost funkcije
