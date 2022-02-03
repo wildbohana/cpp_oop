@@ -19,6 +19,8 @@ friend ostream& operator<<(ostream&, const Complex&)
 // DINSTRING I TO
 
 // []
+// zbog optimalnosti kompajlera, uvek će pozvati referencu (1. verziju sa &)
+//kopija će se pozvati samo ako imamo neku funkciju sa const u sebi
 char& operator[] (int);
 char operator[] (int) const;
 // =
