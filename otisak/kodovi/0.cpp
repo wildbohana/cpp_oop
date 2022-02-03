@@ -15,9 +15,15 @@ int main() {
 }
 
 // ISPIS: 3
-// Pokazivač u funkciji se prima kao (*r){*r=...} a šalje kao (&a)
-// Referenca (&r){r=...} se šalje kao (a)
 
+/*
+Pokazivač: 
+- prima se kao (*r) {*r=...}
+- šalje se kao (&a)
+Referenca:
+- prima se kao (&r) {r=...}
+- šalje se kao (a)
+*/
 
 /*
 pokazivači:
