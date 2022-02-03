@@ -11,11 +11,12 @@ int main() {
 	y = 2;
 	z = 3;
 
+	// pokazivače pravimo
 	px = &x;
 	py = &y;
 	pz = &z;
 
-	// dafuq
+	// pravimo reference preko pokazivača
 	int &rx = *px, ry = *py, &rz = *pz;
 
 	*py = ry;		// ry = &y  ->  *py = ry = &y  =>  *py = &y (py dobija adresu od y i postaje pokazivač na y)
