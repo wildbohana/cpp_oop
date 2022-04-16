@@ -55,4 +55,26 @@ Apstraktna klasa se ne može instancirati
 Klasa koja je napisana pomoću šablona naziva se generička klasa
 Kada se u šablonu navedu konkretni tipovi dobijamo konkretne klase
 
-Ako napišemo konstruktor u private sekciji, i u main-u pokušamo da napravimo taj objekat, kod neće raditi.
+~ Konsultacije:
+
+Ako napišemo konstruktor u private sekciji, i u main-u pokušamo da napravimo taj objekat, kod neće raditi jer main ne može pristupiti private delu klase.
+
+static int x - statičko polje (ne može int static x). Statičko polje se inicijalizuje izvan klase.
+Statičko polje će uvek biti isto, bez obzira na to koji objekat koristimo.
+Samo određene metode imaju mogućnost da menjaju vrednost statičkih polja. Inkrement i dekrement samostalno ne mogu to da urade.
+
+Ako se pozove funkcija napisana van klase, i ako se objekat pošalje bez reference, funkcija će napraviti kopiju tog objekta.
+Onda će doći do pozivanja konstruktora i destruktora (jer se pravi lokalan objekat).
+Korišćenjem referenci izbegavamo dolazak do ovoga i takve funkcije mogu da rade sa originalnim objektima. 
+
+void fun1(A a) {}  - po vrednosti?, pravi se lokalna kopija 
+void fun2(A& a) {} - po referenci, ne pravi se lokalna kopija
+
+Polimorfizam sa pokazivačima - tamo gde očekujemo natklasu možemo poslati potklasu, ali ne možemo da uradimo obrnuto.
+Poziv metode preko pokazivača: pb->f();
+Poziv metode preko referemce:  pb.f();
+
+Enumeracija mora da ima ključnu reč enum. 
+Prva vrednost ima vrednost 0, osim ako nije suprotno naznačeno.
+Ne smemo da imamo dve iste vrednosti (brufen, brufen, aspirin), ali smemo da imamo dva ista broja (brufen = 12, aspirin = 12).
+
