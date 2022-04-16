@@ -54,3 +54,5 @@ Apstraktna klasa se ne može instancirati
 
 Klasa koja je napisana pomoću šablona naziva se generička klasa
 Kada se u šablonu navedu konkretni tipovi dobijamo konkretne klase
+
+Ako napišemo konstruktor u private sekciji, i u main-u pokušamo da napravimo taj objekat, kod neće raditi.
