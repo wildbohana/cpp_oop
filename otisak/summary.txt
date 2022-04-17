@@ -1,61 +1,63 @@
 Summary:
 
-Pokazivač je promenljiva koja sadrži neku adresu; & vraća memorijsku adresu; sa * se posredno pristupa podatku pomoću adrese
+Pokazivač je promenljiva koja sadrži neku adresu; & vraća memorijsku adresu; sa * se posredno pristupa podatku pomoću adrese.
 	px = &x; 	// px dobija adresu od x
 	*px = y;	// na adresu px se postavlja vrednost y
 
-Referenca je adresa, nije podatak, ona je čvrsto vezane za podatak, ne može da menja vrednost (za razliku od pokazivača)
-Reference moraju da se inicijalizuju nekim podatkom koji se već nalazi na nekoj adresi u memoriji
+Referenca je adresa, nije podatak, ona je čvrsto vezane za podatak, ne može da menja vrednost (za razliku od pokazivača).
+Reference moraju da se inicijalizuju nekim podatkom koji se već nalazi na nekoj adresi u memoriji.
 Definisanje reference:
 	int x=5;
 	int &rx=x;
 
-Više funkcija može da ima isto ime, ali se one moraju razlikovati po broju i/ili tipovima argumenata
+Više funkcija može da ima isto ime, ali se one moraju razlikovati po broju i/ili tipovima argumenata.
 
-Ime klase je identifikator
-Prava pristupa mogu biti private ili public
-Konstruktor je metoda koja kreira objekat, ima isto ime kao i klasa, može i ne mora da ima argumente, NIKAD ne vraća vrednost
+Ime klase je identifikator.
+Prava pristupa mogu biti private ili public.
+Konstruktor je metoda koja kreira objekat, ima isto ime kao i klasa, može i ne mora da ima argumente, NIKAD ne vraća vrednost.
 
-Prijateljska funkcija je slobodna funkcija (nije metoda!) koja je unutar klase proglašena za prijatelja date klase, ima privilegiju da pristupi svim članovima te klase (čak i private)
+Prijateljska funkcija je slobodna funkcija (nije metoda!) koja je unutar klase proglašena za prijatelja date klase, 
+ima privilegiju da pristupi svim članovima te klase (čak i private).
 
-this - pokazivač koji sadrži adresu objekta kom pripada
-Sa *this pristupamo memorijskom prostoru datog objekta
+this - pokazivač koji sadrži adresu objekta kom pripada.
+Sa *this pristupamo memorijskom prostoru datog objekta.
 
 Kompozicija je veza između klasa.
 
-U funkcijama koje imaju povratnu vrednost se ne može vratiti referenca na lokalni objekat koji će biti uništen po završetku izvršavanja funkcije
+U funkcijama koje imaju povratnu vrednost se ne može vratiti referenca na lokalni objekat koji će biti uništen po završetku izvršavanja funkcije.
 
-Ugrađeni konstruktor je metoda koja vrši kreiranje objekta ali ne i njegovu inicijalizaciju; on zauzima potrebnu memoriju za objekat i daje mu ime, ali ne inicijalizuje njegova polja
+Ugrađeni konstruktor je metoda koja vrši kreiranje objekta ali ne i njegovu inicijalizaciju; 
+on zauzima potrebnu memoriju za objekat i daje mu ime, ali ne inicijalizuje njegova polja.
 
-Operatori se mogu preklopiti na dva načina: metodom ili slobodnom (prijateljskom) funkcijom
+Operatori se mogu preklopiti na dva načina: metodom ili slobodnom (prijateljskom) funkcijom.
 
-Operator new se koristi za dinamičko zauzimanje memorije i vraća adresu od dobijenog memorijskog segmenta
-Operator delete služi za oslobađanje dinamički alociranog memorijskog segmenta
+Operator new se koristi za dinamičko zauzimanje memorije i vraća adresu od dobijenog memorijskog segmenta.
+Operator delete služi za oslobađanje dinamički alociranog memorijskog segmenta.
 
-Destruktor je metoda koja uništava objekat, nema parametre, ne poziva se direktno već automatski onda kada je potrebno uništiti objekat
-Ugrađeni destruktor samo uništava objekat, ali ne oslobađa dinamički alociranu memoriju
+Destruktor je metoda koja uništava objekat, nema parametre, ne poziva se direktno već automatski onda kada je potrebno uništiti objekat.
+Ugrađeni destruktor samo uništava objekat, ali ne oslobađa dinamički alociranu memoriju.
 
-U svakom objektu potklase može se razlikovati roditeljski deo i deo koji je specifičan za samog potomka
-Načini izvođenja (nasleđivanja): private, protected, public
+U svakom objektu potklase može se razlikovati roditeljski deo i deo koji je specifičan za samog potomka.
+Načini izvođenja (nasleđivanja): private, protected, public.
 
 Ne nasleđuju se konstruktori, destruktori i prijateljstvo sa funkcijama
 Nasleđuju se metode (geteri, seteri, funkcije...), polja klase ? virtualnost ?
 
-Članu klase koji je -private- može se direktno pristupati samo iz metoda te klase i njenih prijateljskih funkcija
-Članu klase koji je -protected- može se direktno pristupati iz metoda te klase, njenih prijateljskih funkcija i metoda njenih potklasa
+Članu klase koji je -private- može se direktno pristupati samo iz metoda te klase i njenih prijateljskih funkcija.
+Članu klase koji je -protected- može se direktno pristupati iz metoda te klase, njenih prijateljskih funkcija i metoda njenih potklasa.
 
-Ekspicitnom promenom tipa originala u neku drugu klasu koristi se samo roditeljski deo originala (u suštini samo izolujemo nadklasni deo potklase)
+Ekspicitnom promenom tipa originala u neku drugu klasu koristi se samo roditeljski deo originala (u suštini samo izolujemo nadklasni deo potklase).
 
-Metoda se proglašava virtuelnom samo jedanput, i to u roditeljskoj klasi i tada u svim klasama naslednicama ta metoda zadržava tu osobinu
-Redefinisana virtuelna metoda mora imati isti prototip kao originalna
-Apstraktna metoda je virtuelna metoda koja nema telo (nema realizaciju) (ima =0)
-Klasa koja ima bar jednu apstraktnu metodu se naziva apstraktna klasa
-Apstraktna klasa se ne može instancirati
+Metoda se proglašava virtuelnom samo jedanput, i to u roditeljskoj klasi i tada u svim klasama naslednicama ta metoda zadržava tu osobinu.
+Redefinisana virtuelna metoda mora imati isti prototip kao originalna.
+Apstraktna metoda je virtuelna metoda koja nema telo (nema realizaciju) (ima =0).
+Klasa koja ima bar jednu apstraktnu metodu se naziva apstraktna klasa.
+Apstraktna klasa se ne može instancirati.
 
-Klasa koja je napisana pomoću šablona naziva se generička klasa
-Kada se u šablonu navedu konkretni tipovi dobijamo konkretne klase
+Klasa koja je napisana pomoću šablona naziva se generička klasa.
+Kada se u šablonu navedu konkretni tipovi dobijamo konkretne klase.
 
-~ Konsultacije:
+~ Konsultacije za otisak:
 
 Ako napišemo konstruktor u private sekciji, i u main-u pokušamo da napravimo taj objekat, kod neće raditi jer main ne može pristupiti private delu klase.
 
@@ -78,3 +80,13 @@ Enumeracija mora da ima ključnu reč enum.
 Prva vrednost ima vrednost 0, osim ako nije suprotno naznačeno.
 Ne smemo da imamo dve iste vrednosti (brufen, brufen, aspirin), ali smemo da imamo dva ista broja (brufen = 12, aspirin = 12).
 
+U Javi, ako ne koristimo new, nećemo inicijalizovati objekat, nego ćemo samo napraviti referencu na njega (NULL-pointer exception).
+
+Kada koristimo .split(";") i ako imamo ; na početku stringa, on ga splituje i tu, a ako je ; na kraju, split ga ignoriše.
+IndexOf ako ne pronađe traženi karakter vraća -1.
+
+Lista koju smo radili na vežbama iz cpp kreće sa indeksiranjem od 1 (dok ona ugrađena kreće od 0).
+
+Konstruktor ne vraća vrednost. Destruktor nema parametre.
+Prijateljska funkcija nije član klase.
+return 0 ne mora da stoji na kraju main-a. On se automatski vraća ako je u programu sve u redu.
