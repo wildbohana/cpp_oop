@@ -1,0 +1,343 @@
+C++ nastaje dodavanjem virtuelnih funkcija i preklapanja operatora u C.
+Kasnije je dodato i višestruko nasleđivanje, apstraktne klase, generičke klase i rukovanje izuzecima.
+C++ nije čist objektan jezik, nego je hibridan. Zbog toga može da ima slobodne funkcije.
+
+Dodela početne vrednosti pri definiciji podatka se naziva inicijalizacija.
+Bitski operatori postoje u jezicima C, C++, Java...
+Identifikator niza predstavlja pokazivač na prvi element tog niza.
+Pozivanje funkcije se smatra binarnim operatorom.
+
+U jeziku C se vrši automatska konverzija jednostavnijeg operanda u složeniji tip ako su operandi nekog operatora različitog tipa (u Javi je to zabranjeno).
+U slučaju pokazivača, dodela vrednosti je dozvoljena samo ako su oba operanda pokazivači na podatke istih tipova.
+U ostalim slučajevima, neophodno je eksplicitno naznačavanje konverzije.
+
+Poljima klasa se može pristupiti preko . (referenca) ili -> (pokazivač).
+
+Parametri funkcije su lokalni podaci.
+Lokalni podaci mogu da se pretvore u trajne podatke upotrebom modifikatora static.
+Prilikom deklaracije funkcije se pišu samo tipovi argumenata, ne i njihovi identifikatori.
+Prilikom definisanja funkcije se moraju napisati i tipovi i identifikatori argumenata.
+Mogu da se definišu pokazivači na funkcije.
+
+Podaci definisani izvan svih funkcija su globalni podaci.
+Oni mogu da se deklarišu proizvoljan broj puta i da se definišu tačno jednom.
+Dinamičke podatke stvara i uništava sam programer.
+Dinamičkim podacima se može pristupiti samo pokazivačima, njihove početne vrednosti su slučajne.
+
+U C++ je uveden logički tip bool. Postoji automatska konverzija između tipa bool i numeričkih tipova (u Javi ovo ne postoji).
+Znakovne konstante su u jeziku C tipa int, a u C++ su tipa char (npr 'A').
+
+Svako nabrajanje je celobrojan tip podataka koji definiše niz simboličkih konstanti.
+Sva nabrajanja se smatraju međusobno različitim tipovima.
+Za podatke tipova nabrajanja je definisana samo operacija dodele vrednosti.
+Nije dozvoljeno ništa drugo (ni inkrement/dekrement, ništa).
+
+Pokazivaču na neki poznati tip podatka u C++ se ne može dodeliti vrednost generičkog (void*) pokazivača.
+
+Referenca u C++ je alternativno ime za neki podatak.
+Ne zauzima prostor u memoriji. Ne postoje nizovi referenci.
+Ne može se dobiti njihova adresa. Ne postoje pokazivači na reference.
+Reference se moraju inicijalizovati prilikom definisanja nekim podatkom koji se već nalazi u memoriji.
+Referencama se kasnije ne može menjati vrednost.
+Sve operacije nad referencama deluju na podatke kojima su pridruženi, a ne na same reference.
+Promenljiv podatak ne može da se promeni nepromenljivom referencom.
+Na reference se može primeniti typedef. Reference mogu da budu parametri i vrednosti funkcija.
+Kod funkcija čija vrednost nije referenca, kao rezultat će se vratiti kopija vrednosti te promenljive, ne i promenljiva koja će kasnije moći da se menja.
+Vrednost funkcije ne sme biti referenca na lokalan prolazan podatak jer će taj podatak biti uništen prilikom napuštanja funkcije.
+
+Postfiksne varijante operatora imaju za jedan nivo viši prioritet nego prefiksne varijante.
+
+Operatori new i delete služe za upravljanje dinamičkom memorijom.
+Veličina dodeljenog prostora pomoću operatora new se automatski određuje na osnovu veličine stvaranog podatka.
+Tip vrednosti operatora new je uvek pokazivač na upravo stvoreni podatak.
+Operatorom new se mogu postaviti početne vrednosti stvaranim podacima po želji.
+Sadržaj niza ne može da se inicijalizuje prilikom dinamičke dodele memorije.
+delete[] niz;
+
+Prilikom definisanja funkcije u C++, mogu se navesti podrazumevane vrednosti za neke parametre.
+Ako se za neki parametar navede početna vrednost, to mora da se uradi i za sve parametre iza njega.
+Funkcija se može pozvati bez argumenata ako svi parametri imaju podrazumevane vrednosti.
+
+Kada preklapamo funkcije, one moraju da imaju iste identifikatore, ali da se razlikuju po tipu ili po broju/tipovima parametara.
+Ako se delovi programa stave u različite prostore imena, onda ne može doći do konflikta pri korišćenju imena.
+Sadržaj prostora imena se ne prenosi iz datoteke u datoteku.
+Identifikatori iz nekog prostora imena se dobavljaju operatorom za razrešenje dosega.
+Svi globalni identifikatori se stavljaju u prostor imena std.
+
+Klase se sastoje iz članova.
+Stanje objekta čine vrednosti podataka članova klase (polja, atributi).
+Metode klase menjaju stanje objekta na koji se primenjuju.
+Članovi klase mogu biti privatni i javni. Ovo se naziva i vidljivost/prava pristupa članova.
+
+Definicija klase predstavlja navođenje svih članova klase.
+Na osnovu definicije klase mora da se zna veličina potrebnog memorijskog prostora za smeštanje pojedinih objekata tipa te klase.
+Posle deklaracije klase se mogu definisati pokazivači i reference na taj tip objekata.
+Pri definisanju objekata se dodeljuje i memorija, pa je potrebno da se zna veličina objekata.
+Tek posle definisanja objekata je moguće pristupati članovima objekata.
+Početni deo klase, pre prve oznake public, je privatan.
+
+Objekti mogu biti parametri funkcija, kao i njihove vrednosti.
+Objekti kao parametri funkcija se prenose pomoću vrednosti, pokazivača i referenci.
+
+Metode klasa imaju "skriven" parametar - adresu objekta za koji je metoda pozvana.
+Taj objekat se naziva tekući objekat. Njegov identifikator je this.
+To je nepromenljiv pokazivač na tu klasu i sadrži njenu adresu.
+Tekući objekat u celini može da se dohvati posrednim pristupom pomoću izraza *this.
+
+Stvaranje objekta podrazumeva dodelu memorijskog prostora i inicijalizaciju dodeljivanjem nekih početnih vrednosti.
+Kod inicijalizacije trajnih (static) objekata se podrazumeva nulta vrednost za sva polja klase.
+
+Konstruktori su specijalne metode koje se pozivaju automatski kad god se stvara neki objekat date klase.
+Njihov zadatak je da neinicijalizovnom objektu dodele sva obeležja njegove klase.
+Klasa može da ima više konstruktora.
+Konstruktori mogu da budu podrazumevani, bez argumenata, sa argumentima, konstruktori kopije, konverzije...
+Konstruktori mogu da imaju podrazumevane parametre. Ne daju nikakvu vrednost funkcije.
+Oni se pozivaju automatski i pri dinamičkom dodeljivanju memorije operatorom new.
+Pre tela konstruktora, iza : se mogu navesti i inicijalizatori.
+
+Za zajednička polja klase se ne mogu navesti inicijalizatori.
+Ta polja se ne stvaraju prilikom stvaranja primeraka klase.
+
+Podrazumevani konstrukor je onaj koji se poziva bez parametara.
+Ako on nije napisan u nekoj klasi, automatski će se generisati jedan sa praznim telom.
+Konstruktori mogu biti javni i privatni. Podrazumevano je da su javni.
+I prosti tipovi imaju podrazumevane konstruktore. Oni se mogu pozvati samo eksplicitno.
+
+Konstruktor kopije se poziva sa jednim argumentom tipa reference na svoj tip klase.
+Prilikom njegovog pozivanja, parametar može biti sam objekat ili referenca na njega.
+Konstruktor kopije se automatski poziva prilikom inicijalizacije parametara funkcije.
+
+Konstruktor konverzije može vršiti konverziju iz standardnih tipova u klasne, ali ne i obrnuto.
+
+Polja klase mogu i sami da budu primerci nekih drugih klasa (kompozicija).
+U toku stvaranja objekta, prvo se inicijalizacuju polja klasnih tipova po redosledu navođenja u definiciji klase.
+Ako se pravi niz objekata, redosled inicijalizacije je po rastućim vrednostima indeksa.
+
+Destruktori oslobađaju memoriju koju su objekti zauzeli pri njihovom uništavanju.
+U slučaju postojanja dinamički dodeljene memorije u nekom objektu, podrazumevani destruktor će obrisati samo pokazivač, neće osloboditi tu memoriju.
+Ako objekat koji se uništava ima destruktore za polja drugih klasa, prvo se pozove destruktor za tu klasu, pa onda za polja klase.
+U slučaju niza, destruktori se pozivaju u opadajućem redosledu indeksa.
+Destruktori se pozivaju suprotno od konstruktora.
+
+Konstante klasnih tipova ne postoje.
+
+Stavljanjem modifikatora static na početak definicije ili deklaracije nekog člana date klase, taj član postaje zajednički član za sve objekte te klase.
+U slučaju zajedničkog člana, postojaće samo jedan primerak tog ćlana.
+Pristup tom polju iz bilo kog od tih objekata podrazumeva pristup istoj memorijskoj lokaciji.
+Njihov opis unutar klase se smatra samo deklaracijom, što ne obuhvata dodelu memorije.
+Ona se definišu zasebnim naredbama za njihovo definisanje koje se pišu izvan definicije klasa. Koristi se operator za razrešenje dosega.
+U nedostatku inicijalizatora ovih polja, nule se podrazumevaju.
+
+Zajedničke metode ne poseduju pokazivač this (zato ne mogu da pristupaju pojedinačnim članovima).
+Da bi se pristupalo ovim metodama, dovoljno je navesti samo identifikator klase, ne i konkretan objekat (kao što se mora za pojedinačne metode).
+Navođenjem samo identifikatora člana, one mogu da pristupaju zajedničkim članovima klasa.
+
+Prijateljske funkcije neke klase nisu članovi te klase, ali imaju pravo pristupa privatnim članocima te klase.
+One mogu da budu obične (globalne) funkcije ili metode drugih klasa.
+Nije bitno da li se funkcija prograšava prijateljskom u privatnom ili javnom delu.
+Prijateljske funkcije ne poseduju pokazivač this, zato mogu da obrađuju samo konkretne objekte te klase.
+
+Klase mogu da se definišu i unutar definicija drugih klasa. 
+Iz unutrašnje klase se mogu koristiti privatni članovi spoljašnje klase, i obrnuto.
+
+Odnosi među klasama:
+Asocijacija - među poljima jedne klase postoji polje koje je pokazivač ili referenca na objekte druge klase.
+Agregacija - delovi mogu da se stavljaju i vade iz nje, a da to ne utiče na njihovu funkcionalnost.
+Kompozicija - delovi ne mogu da postoje van sklopa, oni se stvaraju i uništavaju samo svi zajedno, ili nikako. Delovi se fizički nalaze unutar objekta kompozita.
+
+Operatori su definisani za standardne tipove, ali ne i za klasne tipove.
+Zbog toga je potrebno preklopiti operatore za klasne tipove.
+Zabranjeno je redefinisanje operatora za standardne tipove podataka.
+Za sve novouvedene tipove podataka automatski postoji tumačenje samo za oeprator dodele vrednosti, za obrazovanje adrese objekta i za obrazovanje niza izraza.
+Dodela vrednosti ne podrazumeva kopiranje pokazivača (za to se koriste konstruktori).
+Jedan operator može da se preklopi na više načina.
+Operatorske funkcije ne mogu da imaju parametre sa podrazumevanim vrednostima, i ne mogu da budu zajedničke metode.
+Operatori new i delete mogu da budu preklopljeni samo zajedničkim metodama.
+Svejedno je da li se operatori preklapaju preko metoda ili prijateljskih funkcija.
+
+Prefiksni oblik inckrementa/dekrementa se preklapa sa metodom bez parametara ili globalnom funkcijom za jednim parametrom.
+Postfiksni oblik inckrementa/dekrementa se preklapa sa metodom sa jednim parametrom ili globalnom funkcijom za dva parametra.
+
+Potklasa sadrži deo nasleđen od nadklase, kao i još neke specifične osobine.
+Jedna potklasa može da ima više natklasa. Ovo se zove višestruko nasleđivanje.
+Jedna klasa može da bude natklasa od više potklasa.
+Ne nasleđuju se konstruktori, destruktori, metoda operator =() osnovne klase i prijateljstvo sa funkcijama.
+Osnovne klase nikada ne znaju koje su klase iz nje izvedene.
+Izvedene klase tačno znaju iz kojih su klasa izvedene.
+
+Kontrola pristupa članovima klase se ostvaruje umetanjem oznaka public, protected i private.
+Nasleđivanje klase može biti public, private i protected. Podrazumevano je privatno nasleđivanje.
+Kada je nasleđivanje javno, potklasa može da pristupi svim poljima natklase, u suprotnom ne može.
+
+Članovima osnonvih klasa neke izvedene klase se pristupa na isti način kao i njenim sopstvenim članovima (bez navođenja identifikatora osnovne klase).
+
+Izvedena klasa, pored svojih članova, poseduje kao podobjekat jedan bezimeni primerak svoje osnovne klase.
+Njemu se pristupa operatorom razrešenja opsega.
+Ako postoje dva polja sa istim identifikatorom, za pristup polju iz osnovne klase se mora koristiti operator razrešenja opsega.
+Isto važi i za metode iz osnovnih klasa sa istim imenom.
+
+Ako su dve klase izvedene iz iste klase, i ako se iz njih izvede neka treća klasa, ona će imati dva primerka njihove zajedničke osnovne klase.
+Ovo se izbegne ako im je zajednička osnovna klasa virtuelna. 
+To se postiže dodavanjem modifikatora virtual ispred identifikatora osnovne klase pri definisanju izvedene klase.
+Tada će se naslediti samo jedan primerak zajedničke osnovne klase.
+
+Prilikom definisanja konstruktora za izvedenu klasu, u listi inicijalizatora pre tela konstruktora se mogu navesti i inicijalizatori za osnovne klase.
+Moguća je samo inicijalizacija nasleđenog podobjekta kao celine.
+Neka polja mogu da ostanu neinicijalizovana ako se nigde ne pozove njihov inicijalizator ili im se ne dodeli vrednost.
+
+Kada se stvara objekat tipa izvedene klase, prvo se pozivaju konstruktori osnovnih klasa po redosledu navođenja osnovnih klasa u definiciji izvedene klase.
+Prilikom uništavanja objekata, poslednje se izvršavaju destruktori osnovnih klasa po obrnutom redosledu pozivanja njihovih konstruktora.
+
+Objekat osnovne klase može da se inicijalizuje objektom javno izvedene klase.
+Tom prilikom konstruktor kopije osnovne klase kopira samo polja izvedene klase koja su nasleđena od osnovne klase.
+Obrnuto je moguće samo ako se definiše konverzija.
+
+Pokazivaču na objekte osnovne klase može da se dodeli vrednost na objekte javno izvedene klase.
+Osim pokazivačem je moguće pristupiti samo članovima izvedene klase koji su nasleđeni iz osnovne klase.
+Reference se, po ovome, ponašaju isto kao i pokazivači.
+
+U prilikama kada su parametri funkcije reference na objekte, ako funkcija očekuje osnovnu klasu,
+a referenca na osnovnu klase pokazuje na izvedenu klasu, funkcija će raditi samo sa osnovnim delom te izvedene klase.
+
+Konverzija nadole:  osnovna klasa -> izvedena klasa
+Konverzija nagore: izvedena klasa -> osnovna klasa
+
+Polimorfizam podrazumeva mogućnost ponašanja programa shodno tipovima obrađivanih objekata.
+
+Virtuelna metoda je metoda osnovne klase koja može da se zameni istoimenom metodom odgovarajuće klase kada se pozove za objekat koji pripada izvedenoj klasi.
+Odgovarajuća metoda iz izvedene klase se poziva čak i preko pokazivača ili referenci na objekte osnovne klase.
+Prijateljske funkcije neke klase ne mogu da budu virtuelne za tu klasu (jer se ne nasleđuju).
+Prilikom ponovnog deklarisanja u izvedenim klasama, modifikator virtual se podrazumeva.
+Deklaracije date virtuelne metode i u osnovnoj i u svim izvedenim klasama moraju da budu istovetne.
+I virtuelne metode poseduju polje this.
+Ako se pozivaju preko pokazivača, pozvaće se ona verzija metode iz klase kom taj pokazivač pripada.
+
+Virtuelna metoda ne mora da se definiše u svim izvedenim klasama iz osnovne klase.
+Ako u nekoj od izvedenih klasa ne postoji pozvana virtuelna metoda, pozvaće se verzija metode iz osnovne klase.
+
+Ponašanje programa u polimorfizmu zavisi od tipa obrađivanog podatka, ne od tipa identifikatora pomoću kog se dolazi do obrađivanog objekta.
+
+Ako pokazivač osnovne klase pokazuje na objekat izvedene klase, i ako se pozove neka metoda, prvo se odlazi u osnovnu klasu i proverava da li je ona virtuelna.
+Ako jeste, onda se ide u izvedenu klasu i traži redefinisana metoda.
+Ako metoda nije virtuelna, pozvaće se metoda iz osnovne klase.
+Ako pokazivač izvedene klase pokazuje na objekat izvedene klase, i ako se pozove neka metoda, prvo se pozove izvedena metoda, a ako ona ne postoji, odlazi se u osnovnu klasu.
+
+Ako se preko pokazivača osnovne klase koji pokazuje na objekat izvedene klase, i ako se pozove destruktor, on će uništiti samo osnovni deo te klase.
+
+Virtuelna metoda koja nije definisana u osnovnoj klasi se naziva apstrakrna metoda (čista virtuelna metoda).
+Ona umesto tela funkcije ima =0;
+Klasa koja sadrži bar jednu apstraktnu metodu se naziva apstraktna klasa.
+Ne mogu da se stvaraju objekti apstraktne klase. Mogu da se definišu pokazivači i reference na apstraktne klase.
+
+U jeziku C++ postoje izuzeci, kao i njihovi obrađivači.
+Klase svih izuzetaka u C++ su izvedeni iz zajedničke osnovne klase exception.
+try-catch blok
+throw
+terminate()
+
+Šabloni služe za opisivanje date obrade podataka za opšti slučaj.
+Šabloni mogu da se definišu i za klase.
+Funkcije ili klase koje su opisane pomoću šablona se nazivaju generičke klase ili funkcije.
+Šabloni generičkih klasa mogu da imaju podrazumevane vrednosti.
+Šabloni generičkih funkcija ne smeju da imaju podrazumevane vrednosti.
+class       - klasni tip
+typename    - bilo koji tip
+oznake_tipa - simboličke konstante
+
+Generičke metode ne mogu da budu virtuelne.
+Destruktor ne može da bude generička metoda.
+Konstruktor može da bude generička metoda.
+STL - Standard Template Library
+
+Na početku svakog programa se automatski stvaraju četiri standardna toka:
+cin, cout, cerr, clog.
+
+
+Java koristi virtuelnu mašinu i tako rešava problem portabilnosti programa.
+Ona ne stimulira rad čitavog računara, nego samo neke procese.
+
+U Javi nema destrutkora. Umesto njih, sa objekata se samo skine refernca i oni postanu neupotrebljivi.
+U Javi se objektima rukuje isključivo preko referenci (nema pokazivača).
+Operacija new i dalje postoji, ali delete više ne postoji.
+
+U Javi su sve klase. Izvedeni tipovi više ne postoje.
+Ne postoji naredba typedef, niti operacija preklapanja operatora.
+
+Nema automatske konverzije tipa u manje složeni tip.
+Zabranjeno je dodeljivanje složenijeg tipa manje složenom tipu.
+Nema slobodnih funkcija.
+Ne postoji višestruko nasleđivanje.
+Ne postoje generične klase.
+Ne postoje skokovi (goto je skroz izbačen).
+
+Uvedena su dva nivoa modularizacije: klase i objekti.
+Uveden je logički tip. On je nekonvertibilan.
+Metode mogu da vraćaju reference.
+
+Osnovna klasa svih klasa je klasa Object i iz nje se izvode sve klase.
+Ako objekat ima podobjekat, unutar objekta se nalazi REFERENCA na taj podobjekat.
+
+Virtuelna memorija je podeljena na stek i na hip.
+Stek - sve skalarne promenljive i reference.
+Hip - svi objekti.
+
+Svi celobrojni tipovi su signed. Ne postoji modifikator unisgned.
+String je klasa koja je već ugrađena.
+null je konstanta tipa reference.
+Enumeracija je posebna klasa Enum.
+Omotačke klase pretvaraju bazne podatke u klasne podatke (Int, Long...).
+
+Nizovi su klase u Javi. Niz se nalazi na hipu (kao i svi ostali objekti).
+Zbog ovoga, rezultat funkcije može da bude niz, jer će se vratiti referenca na klasu.
+Java proverava proboj indeksa u nizu.
+U Javi ili svi elementi imaju istu vrednost, ili ni jedan nema vrednost.
+Konkatenacija stringova je polimorfna operacija. Objekat koji se konkatenira mora imati funkciju toString().
+Ako se string prenese po referenci i menja se, promene neće ostati zapamćene.
+
+Operacije u Javi se prepoznaju prema operandima, a ne prema simbolu operacije.
+
+Klase u Javi nemaju public i private segmente.
+Umesto njih, ispred svakog polja i metoda se piše njihov nivo zaštite.
+Svako polje u klasi će biti inicijalizovano, ako ne ručno, onda automatski.
+Podrazumevane vrednosti za inicijalizaciju su false (boolean), null (reference, znakovni tipovi) i 0 (ostali).
+Metode rade isključivo sa originalom.
+
+U Javi postoji polje this, ali nije pokazivač nego adresa.
+
+U jednoj datoteci možemo imati više klasa, ali samo jedna od njih može biti public.
+Svaka klasa se instancira preko operatora new.
+Operator = ne služi za dodelu vrednosti, nego za izjednačavanje referenci.
+Operator == ne upoređuje sadržaje objekata, nego njihove reference.
+
+Statički članovi klasa mogu da se koriste bez postojanja objekta klase (pozivaju se preko klase).
+Statičke metode u Javi postoje.
+Postoje zajedničke (static) promenljive.
+Ne postoje globalne promenljive.
+
+Private deo - samo metode matične klase.
+Default deo - samo metode matične klase i metoda klasa iz istog paketa.
+Protected deo - metode klasa iz tog paketa, kao i izvedene klase.
+Public deo - sve metode, bez ikakvog ograničenja.
+
+Postoji mogućnost redefinisanja metoda pomoću @Override.
+One ne smeju da se razlikuju od originalnih po imenu i parametrima.
+
+Ne postoji višestruko nasleđivanje.
+Nasleđivanje i redefinisanje se može sprečiti upotrebom modifikatora final.
+Preko polja super se može pristupiti baznoj klasi.
+
+Potomak može da se dodeli pretku. Obrnuto nije moguće.
+U Javi se sve metode ponašaju kao virtuelne, osim ako se ne navede drugačije.
+
+Apstraktne klase imaju modifikator abstract.
+Apstraktna klasa može, a i ne mora, da sadrži apstraktne mrode.
+Interfejsi nisu klase. Mogu biti public ili default. Svi članovi interfejsa su public.
+Interfejsi omogućuju inkluzivni polimorfizam.
+Interfejsi ne mogu da se instanciraju, ali se mogu definisati reference na njih.
+Jedna klasa može da implementira više interfejsa.
+
+Unutrašnje klase mogu biti public, private, protected, default i static.
+
+try-catch blok ima i treći deo - finally.
+
+// CTRL - na kraju samo plz, ovo mi je prekrupno
