@@ -1,0 +1,23 @@
+Znak + je za tačno, znak - je za netačno:
+
++ Konstruktor je metoda koja kreira objekat.
++ Mogu se preklopiti operatori samo za klasne tipove.
++ Operatori se preklapaju putem operatorskih metoda.
++ Podrazumevani konstruktor je metoda koja samo kreira objekat.
+- Postoje pokazivači na reference.
++ Ne postoje pokazivači na reference.
++ Referenca je alternativno ime za neki podatak.
+- Postoje nizovi reference.
+- C++ program mora da ima samo jednu main metodu. (main je f-ja, ne metoda!)
++ U C++u postoji obrada izuzetaka. (try-catch blok).
+- U C++u postoje interfejsi.
+- U C++u svaka napisana klasa mora biti u zasebnom fajlu.
+- Može se napravaiti instanca apstraktne klase.
++ Moze se napraviti pokazivač na apstraktnu klasu.
++ Konstruktor mora da ima isto ime kao klasa.
++ Klasa može da nasledi više od jedne klase.
+- Podrazumevani konstruktor je isto što i prazan konstruktor.
++ Destruktor se poziva automatski.
++ Kompozicija je veza između klasa.
++ Public članovima se može pristupati iz unutrašnjosti klase.
++ Apstraktna klasa je klasa koja sadrži bar jednu apstraktnu metodu.
